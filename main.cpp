@@ -19,6 +19,27 @@ bool isPrime(int value)
 	return isPrimeInd;
 }
 
+void primeChecker(int value)
+{
+    if(isPrime(value))
+    {
+        cout << value << " is prime!" << endl;
+    }
+    else
+        cout << value << " is not prime!" << endl;
+}
+
+void listOfPrimes(int value)
+{
+    cout << "All primes that are less than " << value <<endl;
+    for(int i=1; i<value; i++)
+    {
+        if(isPrime(i))
+        {
+                cout << i << "  ";
+        }
+    }
+}
 
 int main()
 {
@@ -26,12 +47,9 @@ int main()
     cout << "isPrime checker" << endl << "Please provide a number to check:" << endl;
     cin>>number;
 
-    if(isPrime(number))
-    {
-        cout << number << " is prime!" << endl;
-    }
-    else
-        cout << number << " is not prime!" << endl;
+    primeChecker(number);
+    listOfPrimes(number);
+
     getchar(); getchar();
     return 0;
 }
